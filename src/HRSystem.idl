@@ -1,0 +1,18 @@
+module HRSystem
+{
+  
+  struct Project
+  {
+	string projectID;
+    	string clientName;
+    	string projectName;
+  };
+  interface HRInterface
+  {
+	string createMRecord(in string managerID, in string firstName,in string lastName,in long employeeID,inout string mailID,inout Project project, in string location);
+	string createERecord (in string managerID, in string firstName,in string lastName,in long employeeID,inout string mailID,inout string projectID);
+	string EditRecord(in string managerID, in string recordID, in string fieldName, inout string newValue);
+        string getRecordCounts(in string managerID);
+	string transferRecord(in string managerID, in string recordID, in string remoteCenterServerName);  
+};
+};
